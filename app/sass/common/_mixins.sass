@@ -1,0 +1,67 @@
+// Buttons
+//
+//
+
+=button-variant($color, $background, $hover-background, $disabled-background: $yellow, $border: transparent)
+    color: $color
+    background-color: $background
+    border: 1px solid $border
+
+    &:hover,
+    &:focus,
+    &:active
+        color: $color
+        background-color: $hover-background
+        +background-image($hover-background)
+
+    &.disabled,
+    &[disabled]
+        &:hover,
+        &:focus,
+        &:active
+            background-color: $disabled-background
+
+
+// Breakpoint
+//
+//
+
+
+=breakpoint($point)
+    @if $point == 1280
+        @media (max-width: #{1280px})
+            @content
+
+    @if $point == 1410/768
+        @media (min-width: #{768px}) and (max-width: #{1410px})
+            @content
+
+    @if $point == 1024
+        @media (max-width: #{1024px})
+            @content
+
+    @if $point == 1000
+        @media (max-width: #{1000px})
+            @content
+
+    @if $point == 768
+        @media (max-width: #{768px})
+            @content
+
+    @if $point == 480
+        @media (max-width: #{480px})
+            @content
+
+// small
+    @if $point == 640
+        @media (max-width: #{640px})
+            @content 
+
+
+    @if $point == 320
+        @media (max-width: #{320px})
+            @content
+
+    @if $point == 960
+        @media (min-width: #{960px})
+            @content

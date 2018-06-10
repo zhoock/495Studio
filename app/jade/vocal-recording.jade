@@ -1,0 +1,41 @@
+extends ../jade/layout.jade
+
+block head
+	- var title = 'Запись вокала'
+	include ../includes/head
+
+block content
+	// Vocal recording
+	.row
+		.small-10.small-centered.column
+			.b-vocal-recording
+				h1 Запись вокала
+				p.
+					Как хорошо записать и&nbsp;обработать вокал в&nbsp;поп и&nbsp;рок композициях.
+				p.
+					Современное оборудование позволяет записывать партию вокала практически по&nbsp;словам или даже по&nbsp;слогам, &laquo;склеив&raquo; таким образом всю вокальную дорожку. Это очень помогает начинающим и&nbsp;не&nbsp;профессиональным вокалистам, которым пока сложно спеть песню целиком с&nbsp;одинаково хорошим звуком и&nbsp;хорошей подачей. Можно записать несколько десятков дублей, и&nbsp;из&nbsp;них впоследствии резать/клеить/монтировать лучшие части. Это не&nbsp;занимает много времени, и&nbsp;получается достаточно бюджетно, а&nbsp;значит, доступно для подавляющего большинства людей, любящих петь.
+
+				p.
+					После записи все ноты в&nbsp;ручном режиме правятся до&nbsp;нужной высоты, можно корректировать и&nbsp;длину спетых слов&nbsp;&mdash; в&nbsp;результате такого редактирования голос звучит очень чисто по&nbsp;нотам и&nbsp;ровно по&nbsp;ритму. Далее голос накладывается на&nbsp;готовый минус, если вы&nbsp;пишетесь под готовую минусовку, либо в&nbsp;мультитрек, если вы&nbsp;заказывали новую аранжировку. К&nbsp;слову скажу, что запись под новую аранжировку всегда получается лучше, ведь при создании фонограммы учитывается тембр и&nbsp;особенности стиля исполнителя&nbsp;&mdash; а&nbsp;это значит, что все будет звучать максимально гармонично. Если&nbsp;же вы&nbsp;возьметесь петь под готовый минус какого либо известного артиста, то&nbsp;при исполнении вам придется подражать ему, чтобы звук голоса был сочетаем с&nbsp;фонограммой.
+
+				p.
+					Есть так&nbsp;же второй вариант записи&nbsp;&mdash; когда мы&nbsp;добиваемся максимальной цельности спетого дубля, т.&nbsp;е. стараемся все крупные части песни (куплет, припев) спеть с&nbsp;одного захода, без склеек. Это долгий путь, время для записи может потребоваться гораздо большее, но&nbsp;в&nbsp;результате мы&nbsp;получаем практически идеальную партию вокала сразу&nbsp;&mdash; все ноты отрепетированы и&nbsp;спеты сразу хорошо, ритмически голос звучит идеально, остается только обработка компрессорами и&nbsp;эквалайзерами, и&nbsp;песня звучит на&nbsp;уровне мировых хитов. Этот вариант не&nbsp;совсем бюджетный, и&nbsp;подходит для тех, кто стремится к&nbsp;максимальному качеству максимально естественным путем.
+
+				p.
+					Ниже представлены примеры работ студии Лидер Продакшн, как звучит вокал изначально после записи, и&nbsp;что с&nbsp;ним бывает после обработки, послушайте, вам будет интересно!	
+
+	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/vocal-recoding.jpg")
+		.b-container.b-container--flex.b-container--sample-songs
+			.row
+				.small-10.small-centered.column
+					h2 Примеры записи песни до&nbsp;и&nbsp;после обработки
+					p До:
+					iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+					p После:
+					iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+					a.btn.btn__start Записаться		
+					
+	// /Vocal recording
+	

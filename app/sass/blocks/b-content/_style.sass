@@ -1,0 +1,107 @@
+// Content
+//
+//
+
+
+main
+	.b-container
+		&--495studio
+			ul
+				+trailer(3)
+
+				li
+					+adjust-font-size-to(1.44rem, 3)
+
+		&--equipment, 
+		&--portfolio,
+		&--prices
+			
+			h2 ~ h2
+				+leader(3)
+
+			p
+				display: flex
+				flex-wrap: wrap
+				+adjust-font-size-to(1.728rem)
+				color: white
+
+				+breakpoint(1024)
+					+adjust-font-size-to(1.44rem)
+					
+				+breakpoint(640)
+					flex-direction: column    
+
+				span
+					padding-right: 42px
+					font-weight: $regular
+					+rhythm(.2)
+
+			li
+				+adjust-font-size-to(1.44rem, 3)  
+
+		&--sample-songs,
+		.b-portfolio 
+			iframe
+				+trailer(3)  
+								   
+		.b-about-us,
+		.b-list-equipment,
+		.b-vocal-recording,
+		.b-creating-arranger,
+		.b-portfolio,
+		.b-prices,
+		.b-persons,
+		.b-contacts           
+			+rhythm-margins(3) 
+
+			h1
+				+trailer(2)
+
+			p
+				+adjust-font-size-to(1.728rem)
+
+				&.less
+					+adjust-font-size-to(1.44rem)
+
+					+breakpoint(1024)
+						+adjust-font-size-to(1.2rem, 1.6)    
+					
+
+				+breakpoint(1024)
+					+adjust-font-size-to(1.44rem)
+																   
+		.b-vocal-recording,
+		.b-creating-arranger,
+		.b-portfolio,
+		.b-prices,
+		.b-contacts
+			h1
+				+adjust-font-size-to(5.16rem)
+					
+				+breakpoint(1024)
+					+adjust-font-size-to(4.3rem)
+
+				+breakpoint(768)
+					+adjust-font-size-to(2.986rem)
+
+			p, li, address
+				+adjust-font-size-to(1.44rem)
+				+breakpoint(1024)
+					+adjust-font-size-to(1.2rem, 1.6)
+
+			a
+				+link-colors($base-font-color)
+	  
+		.b-person 
+			+pie-clearfix
+			+trailer(2)
+					
+			p
+				+adjust-font-size-to(1.44rem)
+
+				+breakpoint(1024)
+					+adjust-font-size-to(1.2rem, 1.6) 
+
+		.b-contacts
+			iframe
+				+leader(3)

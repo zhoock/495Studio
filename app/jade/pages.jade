@@ -1,0 +1,19 @@
+//- pages.jade
+mixin link(href, name)
+	div
+		| #{name} -
+		=" "
+		a(href=href + ".html", target="_blank") #{href + ".html"}
+
+
+doctype html
+html(lang="ru")
+
+	body
+		+link("index","Index")
+		+link("vocal-recording","Vocal recording")
+		+link("creating-arranger","Сreating arranger")
+		+link("portfolio","Portfolio")
+		+link("prices","Prices")
+		+link("contacts","Contacts")
+		+link("application-form","Application form")

@@ -1,0 +1,49 @@
+// Footer
+//
+//
+
+footer
+	+rhythm-padding(3)
+	background: #0a0a0a
+
+	h4
+		+adjust-font-size-to(1.2rem)
+		color: white
+
+	address, li, a, a:link, a:hover, a:visited, a:active
+		color: #9B9B9B
+		line-height: 21px
+
+	li
+		display: block!important	
+			
+	a:hover
+		+hover-link
+
+	.b-nav-col-wrapper
+		display: flex
+
+		+breakpoint(768)
+			display: block
+
+			h4 a
+				margin: 0
+				color: white
+				display: inline-block!important
+
+	.b-nav-col:before 
+		content: ''
+		position: absolute
+		top: 12px
+		left: -4px
+		bottom: 12px
+		border-left: 1px solid $orange
+
+	.b-nav-col:after 
+		background: $orange
+		content: ''
+		position: absolute
+		top: 12px
+		left: -8px
+		width: 9px
+		height: 9px	

@@ -1,0 +1,24 @@
+//- layout.jade
+include ../includes/mixins
+
+doctype html
+html(lang="ru")
+
+	block head
+
+	body
+		.shim
+
+		include ../includes/header
+
+		// content
+		main(role="main")
+			.b-container
+				include ../includes/menu-section
+
+				block content																		
+		// /content
+
+		include ../includes/footer
+
+	script(src = "/js/main.js?v=1")

@@ -1,0 +1,52 @@
+extends ../jade/layout.jade
+
+block head
+	- var title = 'Портфолио'
+	include ../includes/head
+
+block content
+	// Portfolio
+	.row
+		.small-10.small-centered.column
+			.b-portfolio
+				h1 Наши работы
+				p Варвара Кистяева (Голос.Дети)&nbsp;&mdash; Параллели (из&nbsp;к/ф &laquo;Пастели&raquo;)
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+				p Эмиль Кадыров (Голос)&nbsp;&mdash; Не&nbsp;зря (отрывок)
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+							
+				p Алиса Кожикина (Голос.Дети) feat Гульемеш Клысова - Мечты
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+				p Шарип Умханов (Голос)&nbsp;&mdash; Исповедь (отрывок)
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+						
+				p AMANDA&nbsp;&mdash; Давай займемся счастьем
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+						
+				p Эльмира Калимуллина (Голос)&nbsp;&mdash; Молитва (отрывок)
+
+				iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/portfolio.jpg")
+		.b-container.b-container--portfolio.b-container--flex
+			.row
+				.small-10.small-centered.column
+					h2 Наши клиенты
+					p 
+						each item in listClients					
+							span= item
+
+					h2 Наша статистика
+					p 
+						each item in listStatistics					
+							span= item
+
+					a.btn.btn__start Записаться														
+	// /Portfolio

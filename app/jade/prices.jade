@@ -1,0 +1,48 @@
+extends ../jade/layout.jade
+	
+block head
+	- var title = 'Цены на услуги'
+	include ../includes/head
+
+block content
+	// Prices
+	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/prices.jpg")
+		.b-container.b-container--prices.b-container--flex
+			.row
+				.small-10.small-centered.column
+					h2 Цены на&nbsp;услуги
+					p 
+						each item in listServices					
+							span= item
+
+					a.btn.btn__start Записаться
+								
+	.row
+		.small-10.small-centered.column
+			.b-prices
+
+				h3 Услуги звукозаписи
+				ul
+					li Запись голоса на&nbsp;готовую аранжировку&nbsp;&mdash; от&nbsp;4000&nbsp;₽.
+					li Почасовая аренда студии&nbsp;&mdash; 1000&nbsp;₽ (с&nbsp;работой звукорежиссера).
+					li Сведение мультитрека&nbsp;&mdash; 5000&nbsp;₽.
+					li Мастеринг&nbsp;&mdash; 2000&nbsp;₽.
+
+				h3 Песни на&nbsp;заказ
+				ul
+					li Аранжировки&nbsp;&mdash; от&nbsp;10000&nbsp;₽.
+					li Написание оригинальной мелодии к&nbsp;песне&nbsp;&mdash; от&nbsp;5000&nbsp;₽.
+					li Написание текста к&nbsp;песне&nbsp;&mdash; от&nbsp;3000&nbsp;₽.
+					li Песня &laquo;под ключ&raquo;&nbsp;&mdash; от&nbsp;20000&nbsp;₽.
+
+				h3 Обучение
+				ul
+					li Курс &laquo;Cовременная аранжировка&raquo; (8&nbsp;занятий)&nbsp;&mdash; 10000&nbsp;₽. 
+					li Курс &laquo;Школа ритма&raquo; (8&nbsp;занятий)&nbsp;&mdash; 8000&nbsp;₽. 
+					li Курс &laquo;Сведение и&nbsp;мастеринг&raquo; (8&nbsp;занятий)&nbsp;&mdash; 10000&nbsp;₽. 
+					li Курс &laquo;Как написать хит&raquo; (8&nbsp;занятий)&nbsp;&mdash; 10000&nbsp;₽.
+
+				p.callout.primary.
+					Для более точной информации звоните по&nbsp;тел.:&nbsp;+7&nbsp;(915)&nbsp;445-77-62. Все цены гибкие, и&nbsp;мы&nbsp;всегда рады пойти навстречу и&nbsp;скорректировать стоимость наших услуг.	 		
+
+	// /Prices

@@ -1,0 +1,56 @@
+// Header
+//
+//
+
+
+.shim
+	height: 70px
+	width: 100%
+	background: $dark
+
+header
+	background: $dark
+	height: 70px
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	// +debug-vertical-alignment
+
+	a.logo
+		+adjust-font-size-to(1.44rem)
+		margin: 20px 0 0
+		display: inline-block
+
+		span
+			font-weight: $bold
+
+	nav
+		+pie-clearfix
+
+		ul.b-menu
+			float: right
+			margin: 0
+			padding: 0
+
+			li
+				float: left
+				margin: 20px 0 0 0
+				padding: 0
+           
+				a
+					&:link,
+					&:visited
+						+adjust-font-size-to(1rem, 2)
+						color: $nav-link-color
+						padding: 10px 18px
+
+					&:hover,
+					&.current
+						color: $nav-link-color-hover
+
+					&.current
+						pointer-events: none
+						/* disables click event */
+

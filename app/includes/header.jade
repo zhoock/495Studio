@@ -1,0 +1,31 @@
+//- includes/header.jade
+
+
+// header
+header(role="banner")
+	.b-container
+		.row
+			.small-10.small-centered.column
+				.row
+					.small-6.medium-3.columns
+						a.logo(href="http://495studio.ru/") 
+							span 495
+							=" "
+							| STUDIO
+
+					.small-6.medium-9.columns
+
+						// Menu
+						nav(role="navigation")
+							ul.b-menu.hide-for-medium-down
+								+nav
+						// /Menu
+
+						// Menu hamburger
+						.b-menu-hamburger.js-menu-hamburger.hide-for-large-up
+							.b-menu-hamburger__toggle
+								.one
+								.two
+								.three
+						// /Menu hamburger
+// /header						

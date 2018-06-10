@@ -1,0 +1,60 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn
+    border: none
+    cursor: pointer
+    line-height: 1.2
+    font-size: 1rem
+    padding: 16px 50px
+    text-align: center
+    display: inline-block
+    text-transform: uppercase
+    // margin-bottom: 8px
+    font-style: normal
+    -webkit-font-smoothing: subpixel-antialiased
+    +transition(all 0.25s ease-out 0s)
+    letter-spacing: 2px
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+    &.disabled,
+    &[disabled]
+        background-color: $orange
+        color: fade(white, 75%)
+        cursor: not-allowed
+        @include opacity(.7)
+
+
+    & + .btn
+        margin-left: 12px
+
+    &.expand
+        padding-left: 0
+        padding-right: 0
+        width: 100%
+
+    &--small
+        padding: 15px 50px
+
+    &.btn__profile
+        +button-variant(black, $orange, mix($orange, white, 80%), darken($orange, 10%))
+
+    &.btn__restore-password
+        +button-variant(black, white, mix(white, $orange, 80%), darken(white, 10%))
+
+    &.btn__cansel
+        +button-variant(#acacac, transparent, mix(transparent, $orange, 80%), darken(transparent, 10%), #bfbfbf)
+
+    &.btn__start
+        +button-variant(white, $orange, mix($orange, white, 80%), darken($orange, 10%))
+        +leader(1)
+            
+        +breakpoint(768)
+            width: 100%
+

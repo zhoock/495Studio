@@ -1,0 +1,75 @@
+// checkbox & radiobutton
+//
+//
+
+.checkbox, .radio
+	cursor: pointer
+	position: relative
+	+transition(all 0.75s ease-out 0s)
+
+input[type="checkbox"],
+input[type="radio"]
+	height: auto
+	width: auto
+	left: -9999px
+	position: absolute
+	visibility: hidden
+
+input[type="checkbox"] + label
+	cursor: pointer
+	display: block
+	margin-top: -4px
+	+trailer(2)
+	position: relative
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	+adjust-font-size-to(1.2rem)
+
+	&.agreement
+		+adjust-font-size-to(1.5rem)
+		+trailer(1.8)
+
+		&::before
+			width: 16px
+			height: 16px
+			margin-right: 12px
+			vertical-align: text-top
+			background: transparent url(/static/css/blocks/b-test/radio-unchecked.png) no-repeat
+
+		&::after
+			font-size: 0
+
+	&::after
+		content: ""
+		font-size: 1.8rem
+		margin-right: 20px
+		color: white
+		position: absolute
+		left: 10px
+		top: 3px
+
+	&::before
+		content: ""
+		width: 32px
+		height: 32px
+		display: inline-block
+		vertical-align: middle
+		margin-right: 20px
+		background: #5c5c5c
+
+input[type="checkbox"]:checked + label
+
+	&::before
+		background: $orange
+
+	&::after
+		color: #1c1c1c
+
+	&.agreement
+		&::before
+			background: transparent url(/static/css/blocks/b-test/radio-checked.png) no-repeat
+

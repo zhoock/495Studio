@@ -1,0 +1,56 @@
+extends ../jade/layout.jade
+
+block head
+	- var title = 'Заявка на запись'
+	include ../includes/head
+
+block content	
+
+	// Application form
+	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/prices.jpg")
+		.b-container.b-container--flex.b-container--prices
+			.row
+				.small-10.small-centered.column
+					h2 Заявка на запись
+
+					.b-enter__forms.js-wrapper-forms
+						form.b-registration
+
+							div
+								label(for="name_1") Имя
+								input#name_1(type="text", placeholder="Ваше имя", data-validate="Пожалуйста, введите ваше имя")
+
+							div
+								label(for="name_2") Фамилия
+								input#name_2(type="text", placeholder="Ваша фамилия", data-validate="Пожалуйста, введите вашу фамилию")
+
+							div
+								label(for="email") E-mail
+								input#email(type="text", placeholder="Электронная почта", data-inputmask="'alias': 'email'", data-validate="Пожалуйста, введите вашу электронную почту")
+
+							div
+								label(for="phone") Номер телефона
+								input#phone(type="text", placeholder="Ваш номер телефона", data-inputmask="'mask': 'ksphone'", data-validate="Пожалуйста, введите номера вашего телефона")
+
+							div.checkbox
+								input#option1(type="checkbox", name="question")
+								label(for="option1") Запись вокала
+								input#option2(type="checkbox", name="question")
+								label(for="option2") Аранжировка
+								input#option3(type="checkbox", name="question")
+								label(for="option3") Сведение
+								input#option4(type="checkbox", name="question")
+								label(for="option4") Мастеринг		
+
+							div
+								label(for="date") Дата
+								input#date(type="text", placeholder="Ваша дата", data-validate="Пожалуйста, введите дату")
+
+							div
+								label(for="time") Время
+								input#time(type="text", placeholder="Ваше время", data-validate="Пожалуйста, введите время")
+
+							a.btn.btn__start.js_btn_submit Отправить						
+	// Application form
+		
+	

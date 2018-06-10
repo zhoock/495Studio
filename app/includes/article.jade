@@ -1,0 +1,11 @@
+// - includes/article.jade
+
+article.stage.clearfix
+	.stage__img: img(src="#{src}")
+	block heading
+		h3.js-fittext-h3 #{heading}
+	p
+		| #{text}
+	ul.dash
+		each val in design
+			li= val + ";"
