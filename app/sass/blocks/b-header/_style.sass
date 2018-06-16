@@ -19,9 +19,12 @@ header
 	// +debug-vertical-alignment
 
 	a.logo
+		+link-colors($link-color, lighten($link-color, 10%), lighten($link-color, 10%))
+		border: none
 		+adjust-font-size-to(1.44rem)
 		margin: 20px 0 0
 		display: inline-block
+		text
 
 		span
 			font-weight: $bold
@@ -40,17 +43,13 @@ header
 				padding: 0
            
 				a
-					&:link,
-					&:visited
-						+adjust-font-size-to(1rem, 2)
-						color: $nav-link-color
-						padding: 10px 18px
-
-					&:hover,
-					&.current
-						color: $nav-link-color-hover
+					+link-colors($link-color, $orange, $link-color)
+					+adjust-font-size-to(1rem, 2)
+					padding: 10px 18px
+					border: none
 
 					&.current
-						pointer-events: none
+						color: $orange
+						pointer-events: none						
 						/* disables click event */
 

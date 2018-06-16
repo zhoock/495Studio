@@ -51,10 +51,9 @@
 	.b-menu
 		li
 			a
+				+link-colors($link-color, $orange, $link-color)
 				+adjust-font-size-to(1.44rem)
 				padding: 10px 30px
 				display: block
-
-				&:hover
-					color: $nav-link-color-hover
+				border: none
 
