@@ -16,14 +16,21 @@
 			color: #858585
 			display: block
 
+		// сброс стилей автозаполнения формы
+		input:-webkit-autofill,
+		textarea:-webkit-autofill,
+		select:-webkit-autofill
+			transition: background-color 15000s ease-in-out 0s !important
+			-webkit-text-fill-color: $link-color
+
 		input[type="text"]
 			+input-placeholder
 				color: #2d2d2d
 			width: 100%
 			border: none
-			border-bottom: 1px solid white
+			border-bottom: 1px solid $link-color
 			background: none
-			color: white
+			color: $link-color
 			+adjust-font-size-to(1.728rem)
 			+padding-trailer(.5)
 			+transition(all 0.35s ease-out 0s)
@@ -35,23 +42,16 @@
 
 		span
 			color: $error-color
-			display: block
-			+margin-leader(.2)
+			display: block !important
+			+margin-leader(.3)
 
 	.btn.btn__start
 		+leader(3)	
 
 .b-confirmed
-	color: white
-	+adjust-font-size-to(1.8rem)
-
-	img
-		float: left
+	
 	p
 		+trailer(2.5)
-
-	p, .btn
-		margin-left: 76px
 
 .preloader
 	background: rgba(0,0,0,0.4)
