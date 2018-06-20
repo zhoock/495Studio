@@ -38,7 +38,7 @@ input[type="checkbox"] + label
 			height: 16px
 			margin-right: 12px
 			vertical-align: text-top
-			background: transparent url(/static/css/blocks/b-test/radio-unchecked.png) no-repeat
+			background: transparent url(/images/radio-unchecked.png) no-repeat
 
 		&::after
 			font-size: 0
@@ -59,7 +59,7 @@ input[type="checkbox"] + label
 		display: inline-block
 		vertical-align: middle
 		margin-right: 20px
-		background: #5c5c5c
+		background: $link-color
 
 input[type="checkbox"]:checked + label
 
@@ -67,9 +67,9 @@ input[type="checkbox"]:checked + label
 		background: $orange
 
 	&::after
-		color: #1c1c1c
+		color: $link-color
 
 	&.agreement
 		&::before
-			background: transparent url(/static/css/blocks/b-test/radio-checked.png) no-repeat
+			background: transparent url(/images/radio-checked.png) no-repeat
 
