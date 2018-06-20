@@ -6,21 +6,11 @@ block head
 	include ../includes/head
 
 block content
-	// Prices
-	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/prices.jpg")
-		.b-container.b-container--prices.b-container--flex
-			.row
-				.small-10.small-centered.column
-					h2 Цены на&nbsp;услуги
-					p 
-						each item in listServices					
-							span= item
-
-					a(href="/application-form.html").btn.btn__start Записаться
-								
+	// Prices								
 	.row
 		.small-10.small-centered.column
 			.b-prices
+				h1 Цены
 
 				h3 Услуги звукозаписи
 				ul
@@ -44,6 +34,17 @@ block content
 					li Курс &laquo;Как написать хит&raquo; (8&nbsp;занятий)&nbsp;&mdash; 10000&nbsp;₽.
 
 				p.callout.primary.
-					Для более точной информации звоните по&nbsp;тел.:&nbsp;+7&nbsp;(915)&nbsp;445-77-62. Все цены гибкие, и&nbsp;мы&nbsp;всегда рады пойти навстречу и&nbsp;скорректировать стоимость наших услуг.	 		
+					Для более точной информации звоните по&nbsp;тел.:&nbsp;+7&nbsp;(915)&nbsp;445-77-62. Все цены гибкие, и&nbsp;мы&nbsp;всегда рады пойти навстречу и&nbsp;скорректировать стоимость наших услуг.
+
+	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/prices.jpg")
+		.b-container.b-container--prices.b-container--flex
+			.row
+				.small-10.small-centered.column
+					h2 Наши услуги
+					p 
+						each item in listServices					
+							span= item
+
+					a(href="/application-form.html").btn.btn__start Записаться					 		
 
 	// /Prices

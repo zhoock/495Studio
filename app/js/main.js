@@ -1,7 +1,7 @@
 @import 'vendor/jquery-1.10.2.min.js'
 @import 'vendor/parallax.min.js'
 @import 'vendor/jquery.inputmask.bundle.js'
-@import 'vendor/APlayer.min.js'
+// @import 'vendor/APlayer.min.js'
 
 var STUDIO = STUDIO || {};
 
@@ -85,10 +85,10 @@ STUDIO.validateform = function(){
 			});
 	});
 
-	$('.js-validate-forms').on('submit', function (e) {
-		e.preventDefault();
-		simpleValid($(this));
-	});
+	// $('.js-validate-forms').on('submit', function (e) {
+	// 	e.preventDefault();
+	// 	simpleValid($(this));
+	// });
 };
 
 function simpleValid($formObj) {
