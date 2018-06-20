@@ -14,40 +14,44 @@ block content
 				.small-10.small-centered.column
 					h2 Заявка на запись
 
-					form.b-registration.js-validate-forms
+					form(action="https://formspree.io/zhoock@zhoock.ru", method="POST").b-registration.js-validate-forms
 						div
 							label(for="name_1") Имя
-							input#name_1(type="text", placeholder="Ваше имя", data-validate="Пожалуйста, введите ваше имя")
+							input#name_1(type="text", placeholder="Ваше имя", data-validate="Пожалуйста, введите ваше имя", name="Имя")
 
 						div
 							label(for="name_2") Фамилия
-							input#name_2(type="text", placeholder="Ваша фамилия", data-validate="Пожалуйста, введите вашу фамилию")
+							input#name_2(type="text", placeholder="Ваша фамилия", data-validate="Пожалуйста, введите вашу фамилию", name="Фамилия")
 
 						div
 							label(for="email") E-mail
-							input#email(type="text", placeholder="Электронная почта", data-inputmask="'alias': 'email'", data-validate="Пожалуйста, введите вашу электронную почту")
+							input#email(type="text", placeholder="Электронная почта", data-inputmask="'alias': 'email'", data-validate="Пожалуйста, введите вашу электронную почту", name="Электронная почта")
 
 						div
 							label(for="phone") Номер телефона
-							input#phone(type="text", placeholder="Ваш номер телефона", data-inputmask="'mask': '8 (999) 999-99-99'", data-validate="Пожалуйста, введите номер вашего телефона")
+							input#phone(type="text", placeholder="Ваш номер телефона", data-inputmask="'mask': '8 (999) 999-99-99'", data-validate="Пожалуйста, введите номер вашего телефона", name="Номер телефона")
 
 						div.checkbox
-							input#option1(type="checkbox", name="question")
+							input#option1(type="checkbox", name="Тип услуги", value="Запись вокала", checked)
 							label(for="option1") Запись вокала
-							input#option2(type="checkbox", name="question")
+							input#option2(type="checkbox", name="Тип услуги", value="Аранжировка",)
 							label(for="option2") Аранжировка
-							input#option3(type="checkbox", name="question")
+							input#option3(type="checkbox", name="Тип услуги", value="Сведение",)
 							label(for="option3") Сведение
-							input#option4(type="checkbox", name="question")
+							input#option4(type="checkbox", name="Тип услуги", value="Мастеринг",)
 							label(for="option4") Мастеринг		
 
 						div
 							label(for="date") Дата
-							input#date(type="text", placeholder="Ваша дата", data-inputmask="'alias': 'dd/mm/yyyy'", data-validate="Пожалуйста, введите дату")
+							input#date(type="text", placeholder="Ваша дата", data-inputmask="'alias': 'dd/mm/yyyy'", data-validate="Пожалуйста, введите дату", name="Дата записи")
 
 						div
 							label(for="time") Время
-							input#time(type="text", placeholder="Ваше время", data-inputmask="'alias': 'hh:mm'", data-validate="Пожалуйста, введите время")
+							input#time(type="text", placeholder="Ваше время", data-inputmask="'alias': 'hh:mm'", data-validate="Пожалуйста, введите время", name="Время записи")
+
+						input(type="hidden", name="_next", value="/application-form-confirmed.html")
+						input(type="hidden", name="_subject", value="Новая заявка!")
+						input(type="hidden", name="_format", value="plain")
 
 						a.btn.btn__start.js_btn_submit Отправить
 

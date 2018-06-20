@@ -31,10 +31,14 @@ block content
 				.small-10.small-centered.column
 					h2 Примеры записи песни до&nbsp;и&nbsp;после обработки
 					p До:
-					iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+					.b-player
+						audio(src="/audio/woman-after.mp3", controls)
 
 					p После:
-					iframe(width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/455550504%3Fsecret_token%3Ds-IGxbc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true")
+
+					.b-player
+						audio(src="/audio/woman-before.mp3", controls)
 
 					a(href="/application-form.html").btn.btn__start Записаться		
 					

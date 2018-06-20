@@ -1,6 +1,7 @@
 @import 'vendor/jquery-1.10.2.min.js'
 @import 'vendor/parallax.min.js'
 @import 'vendor/jquery.inputmask.bundle.js'
+@import 'vendor/APlayer.min.js'
 
 var STUDIO = STUDIO || {};
 
@@ -73,7 +74,7 @@ STUDIO.mask = function(){
 // validate form
 STUDIO.validateform = function(){
 	$('.js_btn_submit').on('click', function (e) {
-	e.preventDefault();
+		e.preventDefault();
 		$(this).closest('form').submit();
 	});
 
@@ -104,8 +105,8 @@ function simpleValid($formObj) {
 				}
 				else
 					$this.addClass('error');
-			}
-		}
+			}			
+		}			
 	});
 };
 

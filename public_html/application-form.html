@@ -73,41 +73,44 @@
             <div class="row">
               <div class="small-10 small-centered column">
                 <h2>Заявка на запись</h2>
-                <form class="b-registration js-validate-forms">
+                <form action="https://formspree.io/zhoock@zhoock.ru" method="POST" class="b-registration js-validate-forms">
                   <div>
                     <label for="name_1">Имя</label>
-                    <input id="name_1" type="text" placeholder="Ваше имя" data-validate="Пожалуйста, введите ваше имя">
+                    <input id="name_1" type="text" placeholder="Ваше имя" data-validate="Пожалуйста, введите ваше имя" name="Имя">
                   </div>
                   <div>
                     <label for="name_2">Фамилия</label>
-                    <input id="name_2" type="text" placeholder="Ваша фамилия" data-validate="Пожалуйста, введите вашу фамилию">
+                    <input id="name_2" type="text" placeholder="Ваша фамилия" data-validate="Пожалуйста, введите вашу фамилию" name="Фамилия">
                   </div>
                   <div>
                     <label for="email">E-mail</label>
-                    <input id="email" type="text" placeholder="Электронная почта" data-inputmask="'alias': 'email'" data-validate="Пожалуйста, введите вашу электронную почту">
+                    <input id="email" type="text" placeholder="Электронная почта" data-inputmask="'alias': 'email'" data-validate="Пожалуйста, введите вашу электронную почту" name="Электронная почта">
                   </div>
                   <div>
                     <label for="phone">Номер телефона</label>
-                    <input id="phone" type="text" placeholder="Ваш номер телефона" data-inputmask="'mask': '8 (999) 999-99-99'" data-validate="Пожалуйста, введите номер вашего телефона">
+                    <input id="phone" type="text" placeholder="Ваш номер телефона" data-inputmask="'mask': '8 (999) 999-99-99'" data-validate="Пожалуйста, введите номер вашего телефона" name="Номер телефона">
                   </div>
                   <div class="checkbox">
-                    <input id="option1" type="checkbox" name="question">
+                    <input id="option1" type="checkbox" name="Тип услуги" value="Запись вокала" checked>
                     <label for="option1">Запись вокала</label>
-                    <input id="option2" type="checkbox" name="question">
+                    <input id="option2" type="checkbox" name="Тип услуги" value="Аранжировка">
                     <label for="option2">Аранжировка</label>
-                    <input id="option3" type="checkbox" name="question">
+                    <input id="option3" type="checkbox" name="Тип услуги" value="Сведение">
                     <label for="option3">Сведение</label>
-                    <input id="option4" type="checkbox" name="question">
+                    <input id="option4" type="checkbox" name="Тип услуги" value="Мастеринг">
                     <label for="option4">Мастеринг		</label>
                   </div>
                   <div>
                     <label for="date">Дата</label>
-                    <input id="date" type="text" placeholder="Ваша дата" data-inputmask="'alias': 'dd/mm/yyyy'" data-validate="Пожалуйста, введите дату">
+                    <input id="date" type="text" placeholder="Ваша дата" data-inputmask="'alias': 'dd/mm/yyyy'" data-validate="Пожалуйста, введите дату" name="Дата записи">
                   </div>
                   <div>
                     <label for="time">Время</label>
-                    <input id="time" type="text" placeholder="Ваше время" data-inputmask="'alias': 'hh:mm'" data-validate="Пожалуйста, введите время">
-                  </div><a class="btn btn__start js_btn_submit">Отправить</a>
+                    <input id="time" type="text" placeholder="Ваше время" data-inputmask="'alias': 'hh:mm'" data-validate="Пожалуйста, введите время" name="Время записи">
+                  </div>
+                  <input type="hidden" name="_next" value="/application-form-confirmed.html">
+                  <input type="hidden" name="_subject" value="Новая заявка!">
+                  <input type="hidden" name="_format" value="plain"><a class="btn btn__start js_btn_submit">Отправить</a>
                 </form>
               </div>
             </div>
