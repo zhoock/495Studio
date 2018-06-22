@@ -67,7 +67,7 @@ STUDIO.menufooter = function(){
 
 // mask
 STUDIO.mask = function(){
-	$(":input").inputmask();	
+	$(":input").inputmask();
 };
 
 

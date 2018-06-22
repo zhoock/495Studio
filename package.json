@@ -5,6 +5,7 @@
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
     "gulp-connect": "^5.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-jade": "^1.1.0",
     "gulp-js-import": "^1.0.6",
     "gulp-livereload": "^3.8.1",

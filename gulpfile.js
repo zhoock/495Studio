@@ -1,24 +1,25 @@
 "use strict";
 
-var gulp = require('gulp'),
-	compass = require('gulp-compass'),
-	minifyCSS = require('gulp-minify-css'),
-	rename = require("gulp-rename"),
-	jade = require('gulp-jade'),
-	watch = require('gulp-watch'),
-	notify = require("gulp-notify"),
-	livereload = require('gulp-livereload'),
-	connect = require('gulp-connect'),
-	rev = require('gulp-rev'),
-	revCollector = require('gulp-rev-collector'),
-	gutil = require('gulp-util'),
-	rimraf = require('rimraf'),
-	revOutdated = require('gulp-rev-outdated'),
-	path = require('path'),
-	through = require('through2'),
-	uglify = require('gulp-uglify'),
-	pump = require('pump'),
-	jsImport = require('gulp-js-import');
+var gulp 			= require('gulp'),
+	compass 		= require('gulp-compass'),
+	minifyCSS 		= require('gulp-minify-css'),
+	rename 			= require("gulp-rename"),
+	jade 			= require('gulp-jade'),
+	watch 			= require('gulp-watch'),
+	notify 			= require("gulp-notify"),
+	livereload 		= require('gulp-livereload'),
+	connect 		= require('gulp-connect'),
+	rev 			= require('gulp-rev'),
+	revCollector 	= require('gulp-rev-collector'),
+	gutil 			= require('gulp-util'),
+	rimraf 			= require('rimraf'),
+	revOutdated 	= require('gulp-rev-outdated'),
+	path 			= require('path'),
+	through 		= require('through2'),
+	uglify 			= require('gulp-uglify'),
+	pump 			= require('pump'),
+	jsImport 		= require('gulp-js-import'),
+	imagemin 		= require('gulp-imagemin');
 
 
 // server connect
@@ -121,17 +122,35 @@ gulp.task('javascript', function() {
 
 });
 
+// imagemin
+gulp.task('imagemin', () =>
+    gulp.src('./app/images/**/*.+(png|jpg|gif|svg|ico)')
+        .pipe(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+        ]))
+        .pipe(gulp.dest('./public_html/images'))
+);
+
+// fonts
+// gulp.task('fonts', function() {
+// 	return gulp.src('./app/fonts/**/*')
+// 	.pipe(gulp.dest('./public_html/fonts'))
+// });
+
 
 // watch
 gulp.task('watch', function() {
-			gulp.watch(('./app/**/*.jade'), ['jade']);
-			gulp.watch(('./app/**/*.+(scss|sass)'), ['compass']);
+	gulp.watch(('./app/**/*.jade'), ['jade']);
+	gulp.watch(('./app/**/*.+(scss|sass)'), ['compass']);
 	gulp.watch(('./app/**/*.js'), ['javascript']);
+	gulp.watch(('./app/images/*'), ['compress']);
 });
 
 
 // default
-gulp.task('default', ['connect', 'jade', 'compass', 'javascript', 'watch']);
+gulp.task('default', ['connect', 'jade', 'compass', 'javascript', 'imagemin', 'fonts', 'watch']);
 
 // compass
 gulp.task('compass', ['rev', 'rev_collector', 'clean']);
