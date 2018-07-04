@@ -83,7 +83,7 @@ body
 		+link-colors($base-text-color, lighten($base-text-color, 10%), lighten($base-text-color, 10%))
 		text-decoration: none
 		border-bottom: 1px solid
-		+transition(color .5s)
+		+transition(color .15s)
 
 		&:hover
 			border-bottom-color: lighten($base-text-color, 10%)
@@ -111,23 +111,12 @@ body
 		&--responsive
 			display: flex
 			min-height: 40vw
+			align-items: center
 
 	.b-container
 		position: relative
 		max-width: 1600px
-		// min-width: 375px
-		margin: 0 auto
-
-		&--flex
-			align-self: center
-			flex: 0 0 100%
-			+rhythm-padding(2)
-
-			h2, p, li
-				color: white
-
-			p
-				+adjust-font-size-to(1.728rem)    
+		margin: 0 auto   
 
 		&--495studio
 			+breakpoint(480)

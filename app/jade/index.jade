@@ -1,15 +1,15 @@
 extends ../jade/layout.jade
 
 block head
-	- var title = '495 Studio Records - Профессиональная студия звукозаписи в Москве, лейбл, песни на заказ'
-	- var description = '495 Studio Records - аранжировки, песни на заказ, полный цикл работы над песней. Качественно и недорого.'
+	- var title = '495 Studio Records - Профессиональная студия звукозаписи в Москве, лейбл, песни на заказ';
+	- var description = '495 Studio Records - аранжировки, песни на заказ, полный цикл работы над песней. Качественно и недорого.';
 
 	include ../includes/head
 	
 block content
 
 	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/header.jpg")
-		.b-container.b-container--495studio.b-container--flex
+		.b-container--495studio
 			.row
 				.small-10.small-centered.column
 					h1 495 STUDIO
@@ -23,7 +23,7 @@ block content
 	// About us
 	.row
 		.small-10.small-centered.column
-			.b-about-us
+			article.article-special
 				h2 495 STUDIO RECORDS
 				p.
 					495 Studio Records&nbsp;&mdash; студия звукозаписи в&nbsp;Москве, мы&nbsp;специализируемся на&nbsp;#[a(href="/creating-arranger.html") профессиональных аранжировках], записи музыкальных инструментов, #[a(href="/vocal-recording.html") записи вокала], сведении и&nbsp;мастеринге. Набор услуг вроде&nbsp;бы стандартный для большинства студий, что&nbsp;же отличает нас от&nbsp;других?
@@ -43,10 +43,9 @@ block content
 		.small-10.small-centered.column
 			h2 О нас
 
-			.b-persons
+			article
 				.row
-					.b-person
-							
+					article
 						.small-6.small-centered.medium-3.medium-uncentered.column
 							img(src="/images/1.png")
 
@@ -54,10 +53,9 @@ block content
 							h3 Александр Колесников
 							p.
 								Звукорежиссер, аранжировщик, мастер звукового полотна, способный в&nbsp;любую аранжировку, сведение или мастеринг вдохнуть столько энергии и&nbsp;силы, что никто из&nbsp;слушателей не&nbsp;остается равнодушным после прослушивания.
-
 			
 				.row
-					.b-person
+					article
 						.small-6.small-centered.medium-3.medium-push-9.medium-uncentered.column
 							img(src="/images/2.png")
 
@@ -65,10 +63,9 @@ block content
 							h3.text-right Айдар Хамзин
 							p.
 								Айдар Хамзин&nbsp;&mdash; композитор, пишет замечательные #[a(href="/portfolio.html") песни на&nbsp;заказ], гений удивительно красивых мелодий, изящных гармоний и&nbsp;просто выдающихся аранжировок. Написанные им&nbsp;песни звучат в&nbsp;исполнении уже огромного числа исполнителей, среди которых и&nbsp;звезды российской сцены.
-														
-		
+																
 				.row
-					.b-person
+					article
 						.small-6.small-centered.medium-3.medium-uncentered.column
 							img(src="/images/3.png")
 
@@ -80,20 +77,21 @@ block content
 					
 	// Equipment
 	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/equipment.jpg")
-		.b-container.b-container--equipment.b-container--flex
+		.b-container--equipment
 			.row
 				.small-10.small-centered.column
 					h2 Оборудование
 					p 
-						each item in listEquipment					
-							span= item
+						each val in listEquipment					
+							span= val
 					p.
-						Посмотрите видеоролики, как мы&nbsp;создаем гитарные партии в&nbsp;аранжировках с&nbsp;помощью процессора Fractal Axe FX&nbsp;II&nbsp;XL.		
+						Посмотрите видеоролики, как мы&nbsp;создаем гитарные партии в&nbsp;аранжировках с&nbsp;помощью процессора Fractal Axe FX&nbsp;II&nbsp;XL.
+								
 					a.btn.btn__start Создание гитарной аранжировки
 
 	.row
 		.small-10.small-centered.column
-			.b-list-equipment 
+			article.article-special
 				p.
 					Гитарный процессор Fractal Axe FX&nbsp;II&nbsp;XL&nbsp;в настоящее время является лучшим эмулятором гитарных усилителей и&nbsp;кабинетов. Используя Axe&nbsp;FX&nbsp;в&nbsp;аранжировках, мы&nbsp;гарантировано получаем очень качественный гитарный звук, все партии идеально ложаться в&nbsp;звучание микса, а&nbsp;тембральная палитра настолько разнообразна, что можно работать в&nbsp;любых стилях&nbsp;&mdash; от&nbsp;поп музыки, до&nbsp;экстремального тяжелого рока.
 

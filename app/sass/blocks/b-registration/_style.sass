@@ -3,6 +3,7 @@
 //
 
 
+
 .b-registration
 	div
 		position: relative
@@ -33,7 +34,7 @@
 			color: $link-color
 			+adjust-font-size-to(1.728rem)
 			+padding-trailer(.5)
-			+transition(all 0.35s ease-out 0s)
+			+transition(color 0.35s ease-out 0s)
 			+border-radius(0)
 
 			&.error
@@ -48,8 +49,7 @@
 	.btn.btn__start
 		+leader(3)	
 
-.b-confirmed
-	
+.b-confirmed	
 	p
 		+trailer(2.5)
 
@@ -73,6 +73,4 @@
 
 +keyframes(spinner)
 	100%
-		+rotate(360deg)
- 
-      
+		+rotate(360deg)      

@@ -1,7 +1,6 @@
 @import 'vendor/jquery-1.10.2.min.js'
 @import 'vendor/parallax.min.js'
 @import 'vendor/jquery.inputmask.bundle.js'
-// @import 'vendor/APlayer.min.js'
 
 var STUDIO = STUDIO || {};
 
@@ -71,6 +70,20 @@ STUDIO.mask = function(){
 };
 
 
+
+//linkCurrent
+STUDIO.linkCurrent = function() {
+
+	var pathname = (document.location.pathname),
+		$links = $('a[href="' + pathname + '"]');
+
+	$links.toggleClass('current');
+
+};
+
+
+
+
 // validate form
 STUDIO.validateform = function(){
 	$('.js_btn_submit').on('click', function (e) {
@@ -112,11 +125,14 @@ function simpleValid($formObj) {
 
 
 $(function(){
+
 	STUDIO.hamburger();
 	STUDIO.parallax();
 	STUDIO.menufooter();
 	STUDIO.mask();
+	STUDIO.linkCurrent();
 	STUDIO.validateform();
+
 });
 
 

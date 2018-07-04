@@ -1,6 +1,6 @@
 preferred_syntax = :sass
 http_path = "/"
-css_dir = "./www/css"
+css_dir = "./public_html/css"
 sass_dir = "./app/sass"
 images_dir = "./app/images"
 javascripts_dir = './app/js'

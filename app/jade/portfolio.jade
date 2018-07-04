@@ -1,15 +1,16 @@
 extends ../jade/layout.jade
 
 block head
-	- var title = 'Портфолио'
-	- var description = '495 Studio Records - работы нашей студии звукозаписи, примеры аранжировок, хитовые и интересные песни, звезды пишутся в 495 Studio.'
+	- var title = 'Портфолио';
+	- var description = '495 Studio Records - работы нашей студии звукозаписи, примеры аранжировок, хитовые и интересные песни, звезды пишутся в 495 Studio.';
+	
 	include ../includes/head
 
 block content
 	// Portfolio
 	.row
 		.small-10.small-centered.column
-			.b-portfolio
+			article
 				h1 Наши работы
 				p Варвара Кистяева (Голос.Дети)&nbsp;&mdash; Параллели (из&nbsp;к/ф &laquo;Пастели&raquo;)
 
@@ -42,7 +43,7 @@ block content
 					audio(src="/audio/elmira-molitva.mp3", controls)
 
 	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/portfolio.jpg")
-		.b-container.b-container--portfolio.b-container--flex
+		.b-container--portfolio
 			.row
 				.small-10.small-centered.column
 					h2 Наши клиенты

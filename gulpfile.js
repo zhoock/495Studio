@@ -1,32 +1,53 @@
 "use strict";
 
-var gulp 			= require('gulp'),
-	compass 		= require('gulp-compass'),
-	minifyCSS 		= require('gulp-minify-css'),
-	rename 			= require("gulp-rename"),
-	jade 			= require('gulp-jade'),
-	watch 			= require('gulp-watch'),
-	notify 			= require("gulp-notify"),
-	livereload 		= require('gulp-livereload'),
-	connect 		= require('gulp-connect'),
-	rev 			= require('gulp-rev'),
-	revCollector 	= require('gulp-rev-collector'),
-	gutil 			= require('gulp-util'),
-	rimraf 			= require('rimraf'),
-	revOutdated 	= require('gulp-rev-outdated'),
-	path 			= require('path'),
-	through 		= require('through2'),
-	uglify 			= require('gulp-uglify'),
-	pump 			= require('pump'),
-	jsImport 		= require('gulp-js-import'),
-	imagemin 		= require('gulp-imagemin');
+var gulp = require('gulp'),
+	compass = require('gulp-compass'),
+	minifyCSS = require('gulp-minify-css'),
+	rename = require("gulp-rename"),
+	jade = require('gulp-jade'),
+	watch = require('gulp-watch'),
+	notify = require("gulp-notify"),
+	connect = require('gulp-connect'),
+	rev = require('gulp-rev'),
+	revCollector = require('gulp-rev-collector'),
+	gutil = require('gulp-util'),
+	rimraf = require('rimraf'),
+	revOutdated = require('gulp-rev-outdated'),
+	path = require('path'),
+	through = require('through2'),
+	uglify = require('gulp-uglify'),
+	pump = require('pump'),
+	jsImport = require('gulp-js-import'),
+	imagemin = require('gulp-imagemin'),
+	bump = require('gulp-bump'),
+	update = require('gulp-update'),
+	rename = require('gulp-rename');
+
+
+// Will patch the version
+gulp.task('bump', function() {
+	gulp.src('./package.json')
+		.pipe(bump())
+		.pipe(gulp.dest('./'));
+});
+
+
+//npmUpdate
+gulp.task('npmUpdate', function() {
+	var update = require('gulp-update')();
+
+	gulp.watch('./package.json').on('change', function(file) {
+		update.write(file);
+	});
+
+});
 
 
 // server connect
 gulp.task('connect', function() {
 	connect.server({
-		port: 1610,
-		root: 'public_html',
+		port: 8495,
+		root: './public_html',
 		livereload: true
 	});
 });
@@ -59,6 +80,7 @@ gulp.task('rev', function() {
 			this.emit('end');
 		})
 		.pipe(minifyCSS())
+		.pipe(rename('style-min.css'))
 		.pipe(gulp.dest('./public_html/css/'))
 
 
@@ -67,7 +89,7 @@ gulp.task('rev', function() {
 		.pipe(rev.manifest())
 		.pipe(gulp.dest('./app/manifests/'))
 
-		.pipe(notify('Done!'))
+		.pipe(notify('css собран '));
 
 });
 
@@ -78,7 +100,7 @@ gulp.task('rev_collector', ['rev'], function() {
 		}))
 
 		.pipe(gulp.dest('./public_html/'))
-		.pipe(connect.reload())
+		.pipe(connect.reload());
 });
 
 function cleaner() {
@@ -102,7 +124,7 @@ gulp.task('clean', ['rev_collector'], function() {
 });
 
 
-//uglify js
+// uglify js
 gulp.task('uglify', function() {
 	pump([
 		gulp.src('./public_html/js/main.js'),
@@ -113,25 +135,28 @@ gulp.task('uglify', function() {
 
 
 // import js
-gulp.task('javascript', function() {
+gulp.task('jsImport', function() {
 	return gulp.src('./app/js/main.js')
 		.pipe(jsImport({ hideConsole: true }))
 		.pipe(uglify())
+		.pipe(rename('main-min.js'))
 		.pipe(gulp.dest('./public_html/js'))
+		.pipe(notify('js собран '))
 		.pipe(connect.reload());
 
 });
 
 // imagemin
-gulp.task('imagemin', () =>
-    gulp.src('./app/images/**/*.+(png|jpg|gif|svg|ico)')
-        .pipe(imagemin([
-			imagemin.gifsicle({interlaced: true}),
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 5}),
-        ]))
-        .pipe(gulp.dest('./public_html/images'))
-);
+gulp.task('compress', function() {
+	return gulp.src('./app/images/**/*.+(png|jpg|gif|svg|ico)')
+		.pipe(imagemin([
+			imagemin.gifsicle({ interlaced: true }),
+			imagemin.jpegtran({ progressive: true }),
+			imagemin.optipng({ optimizationLevel: 5 }),
+		]))
+		.pipe(gulp.dest('./public_html/images'))
+});
+
 
 // fonts
 // gulp.task('fonts', function() {
@@ -144,13 +169,19 @@ gulp.task('imagemin', () =>
 gulp.task('watch', function() {
 	gulp.watch(('./app/**/*.jade'), ['jade']);
 	gulp.watch(('./app/**/*.+(scss|sass)'), ['compass']);
-	gulp.watch(('./app/**/*.js'), ['javascript']);
+	gulp.watch(('./app/**/*.js'), ['jsImport']);
 	gulp.watch(('./app/images/*'), ['compress']);
 });
 
 
 // default
-gulp.task('default', ['connect', 'jade', 'compass', 'javascript', 'imagemin', 'fonts', 'watch']);
+gulp.task('default', ['connect', 'jade', 'compass', 'jsImport', 'watch']);
 
 // compass
 gulp.task('compass', ['rev', 'rev_collector', 'clean']);
+
+//npmUpdate
+gulp.task('update', ['bump', 'npmUpdate', ]);
+
+//compressImg
+gulp.task('compress', ['compress']);

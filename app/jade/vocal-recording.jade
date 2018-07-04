@@ -1,15 +1,16 @@
 extends ../jade/layout.jade
 
 block head
-	- var title = 'Запись вокала'
-	- var description = '495 Studio Records - как записать вокал в студии звукозаписи, примеры работ до и после обработки, записать песню в подарок на свадьбу, юбилей, день рождения.'
+	- var title = 'Запись вокала';
+	- var description = '495 Studio Records - как записать вокал в студии звукозаписи, примеры работ до и после обработки, записать песню в подарок на свадьбу, юбилей, день рождения.';
 	include ../includes/head
 
 block content
+
 	// Vocal recording
 	.row
 		.small-10.small-centered.column
-			.b-vocal-recording
+			article
 				h1 Запись вокала
 				p.
 					Как хорошо записать и&nbsp;обработать вокал в&nbsp;поп и&nbsp;рок композициях.
@@ -26,7 +27,7 @@ block content
 					Ниже представлены примеры работ студии 495 Studio, как звучит вокал изначально после записи, и&nbsp;что с&nbsp;ним бывает после обработки, послушайте, вам будет интересно!	
 
 	.parallax-window.parallax-window--responsive(data-parallax="scroll", data-image-src="/images/vocal-recoding.jpg")
-		.b-container.b-container--flex.b-container--sample-songs
+		.b-container--vocal-recording
 			.row
 				.small-10.small-centered.column
 					h2 Примеры записи песни до&nbsp;и&nbsp;после обработки

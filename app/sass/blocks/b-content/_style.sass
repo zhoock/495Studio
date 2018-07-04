@@ -4,18 +4,23 @@
 
 
 main
+	
 	.b-container
-		&--495studio
+		&--495studio				
 			ul
 				+trailer(3)
 
-				li
-					+adjust-font-size-to(1.44rem, 3)
-
+		&--495studio,
 		&--equipment, 
 		&--portfolio,
-		&--prices,
-		&--form
+		&--prices,		
+		&--vocal-recording,
+		&--form	
+			flex: 0 0 100%
+			+rhythm-padding(2)
+
+			h2, p, li
+				color: white
 			
 			h2 ~ h2
 				+leader(3)
@@ -40,44 +45,13 @@ main
 			li
 				+adjust-font-size-to(1.44rem, 3)  
 
-		&--sample-songs,
-		.b-portfolio 
-			.b-player
-				+trailer(3)  
-								   
-		.b-about-us,
-		.b-list-equipment,
-		.b-vocal-recording,
-		.b-creating-arranger,
-		.b-portfolio,
-		.b-prices,
-		.b-persons,
-		.b-contacts           
-			+rhythm-margins(3) 
+			 																		   
+		article
+			+pie-clearfix
+			+rhythm-margins(3)
 
 			h1
 				+trailer(2)
-
-			p
-				+adjust-font-size-to(1.728rem)
-
-				&.less
-					+adjust-font-size-to(1.44rem)
-
-					+breakpoint(1024)
-						+adjust-font-size-to(1.2rem, 1.6)    
-					
-
-				+breakpoint(1024)
-					+adjust-font-size-to(1.44rem)
-																   
-		.b-vocal-recording,
-		.b-creating-arranger,
-		.b-portfolio,
-		.b-prices,
-		.b-contacts,
-		.b-application-form
-			h1
 				+adjust-font-size-to(5.16rem)
 					
 				+breakpoint(1024)
@@ -89,20 +63,26 @@ main
 			p, li, address
 				+adjust-font-size-to(1.44rem)
 				+breakpoint(1024)
-					+adjust-font-size-to(1.2rem, 1.6)			
-	  
-		.b-person 
-			+pie-clearfix
-			+trailer(2)
-					
-			p
-				+adjust-font-size-to(1.44rem)
+					+adjust-font-size-to(1.2rem, 1.6)
 
-				+breakpoint(1024)
-					+adjust-font-size-to(1.2rem, 1.6) 
-
-		.b-contacts
 			iframe
 				+leader(3)
-			a
-				+link-colors($base-font-color)			
+
+			article
+				+rhythm-margins(0, 2)
+
+		.article-special         
+			p
+				+adjust-font-size-to(1.728rem)
+
+				&.less
+					+adjust-font-size-to(1.44rem)
+
+					+breakpoint(1024)
+						+adjust-font-size-to(1.2rem, 1.6)    
+					
+				+breakpoint(1024)
+					+adjust-font-size-to(1.44rem)
+
+		.b-player
+			+trailer(3)		
