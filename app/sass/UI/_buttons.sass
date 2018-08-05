@@ -14,7 +14,7 @@
     // margin-bottom: 8px
     font-style: normal
     -webkit-font-smoothing: subpixel-antialiased
-    +transition(color 0.25s ease-out 0s)
+    +transition(background-color .35s ease-out 0s)
     letter-spacing: 2px
     -webkit-touch-callout: none
     -webkit-user-select: none
@@ -28,8 +28,7 @@
         background-color: $orange
         color: fade(white, 75%)
         cursor: not-allowed
-        @include opacity(.7)
-
+        +opacity(.7)
 
     & + .btn
         margin-left: 12px

@@ -2260,10 +2260,10 @@ body a {
   color: #333;
   text-decoration: none;
   border-bottom: 1px solid;
-  -moz-transition: color 0.15s;
-  -o-transition: color 0.15s;
-  -webkit-transition: color 0.15s;
-  transition: color 0.15s;
+  -moz-transition: color 0.35s;
+  -o-transition: color 0.35s;
+  -webkit-transition: color 0.35s;
+  transition: color 0.35s;
 }
 body a:hover {
   color: #4d4d4d;
@@ -2285,6 +2285,7 @@ body .callout {
   margin: 0 0 1rem 0;
   padding: 1rem;
   border: 1px solid #ec9e8a;
+  border-left-width: 3px;
 }
 body .primary {
   background-color: #fae7e2;
@@ -2761,11 +2762,11 @@ footer .b-nav-col:after {
   text-transform: uppercase;
   font-style: normal;
   -webkit-font-smoothing: subpixel-antialiased;
-  -moz-transition: color 0.25s ease-out 0s;
-  -o-transition: color 0.25s ease-out 0s;
-  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: background-color 0.35s ease-out 0s;
+  -o-transition: background-color 0.35s ease-out 0s;
+  -webkit-transition: background-color 0.35s ease-out;
   -webkit-transition-delay: 0s;
-  transition: color 0.25s ease-out 0s;
+  transition: background-color 0.35s ease-out 0s;
   letter-spacing: 2px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
