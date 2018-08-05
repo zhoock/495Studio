@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://495studio.netlify.com/* http://495studio.ru/:splat 301!
