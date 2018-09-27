@@ -2360,6 +2360,10 @@ header a.logo:active {
 header a.logo span {
   font-weight: 600;
 }
+header a.logo small {
+  font-size: 1rem;
+  line-height: 2.4rem;
+}
 header nav {
   *zoom: 1;
 }
