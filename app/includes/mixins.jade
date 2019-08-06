@@ -6,13 +6,13 @@ mixin link(href, name, accesskey)
 		a(href=href, title=name, accesskey=accesskey)&attributes(attributes)= name
 
 mixin nav
-	each val, index in {"vocal-recording.html":"Запись вокала", "creating-arranger.html":"Делаем аранжировку", "portfolio.html":"Портфолио", "prices.html":"Цены", "contacts.html":"Контакты"}
+	each val, index in {"portfolio.html":"Портфолио", "prices.html":"Цены", "contacts.html":"Контакты", "application-form.html":"Оставить заявку"}
 		+link("/" + index, val)
 
 - var listEquipment = ["Digidesign Pro Tools HD2", "Fractal Axe FX II XL", "Tascam m2524", "KRK V8", "Symetrix 620", "Korg Trinity", "Nagra IV L", "SADiE Classic", "Tapco S8", "Gibson Les Paul Smartwood (1998)", "Gibson J160E Custom (1972)", "Fender American Stratocaster (1994)", "Yamaha gc2020", "Apple MacPro", "Fender American JazzBass Deluxe", "Allen&Heath GL3", "Joemeek JM47"]		
 
-- var listClients = ["Алиса Кожикина (Голос.Дети)", "Шарип Умханов (Голос 2)", "Варвара Кистяева (Голос.Дети)", "Эмиль Кадыров (Голос 4)", "Nickuum", "Кайрат Примбердиев (Голос 5)", "Эльмира Калимуллина (Голос)", "Группа “ZAMAN”", "Непоседы", "Театр народной песни «Русский праздник»", "Рамиль Бадамшин", "Марсель Давлетов", "Вячеслав Кожевников", "Гузель Габитова", "...и еще более 1000 человек"]
+- var listClients = ["Lorem ipsum (dolor sit amet)", "Lorem ipsum (dolor sit amet)", "Lorem ipsum (dolor sit amet)", "Lorem ipsum (dolor sit amet)", "Lorem ipsum", "Lorem ipsum (dolor sit amet)", "Lorem ipsum (dolor sit amet)", "Lorem “Lorem ipsum”", "Lorem ipsum", "Lorem ipsum “dolor sit amet”", "Lorem ipsum", "dolor sit amet", "dolor sit amet", "Lorem ipsum", "...Lorem ipsum"]
 
-- var listStatistics = ["Записано более 1500 песен в подарок", "Написано более 200 мелодий на заказ", "Сделано более 1000 аранжировок", "Обучение по курсу «Аранжировка. Сведение. Мастеринг» прошли более 50 человек", "Выпущено более 10 полноценных альбомов разных исполнителей", "Открыто две студии звукозаписи"]
+- var listStatistics = ["Записано более 1500 песен в подарок", "Написано более 200 мелодий на заказ", "Сделано более 1000 аранжировок", "Обучение по курсу «Аранжировка. Сведение. Мастеринг» прошли более 50 человек", "Выпущено более 10 полноценных альбомов разных исполнителей"]
 
 - var listServices = ["Запись вокала", "Создание аранжировок", "Создание минусовок", "Запись гитары", "Запись саксофона", "Обработка вокала", "Сведение", "Мастеринг", "Реампинг", "Написание песен", "Написание музыки к кино, анимации, театру", "Тексты песен", "Услуги сессионных музыкантов", "Услуги бэк вокалистов", "Тюн вокала", "Школа аранжировщиков", "Уроки по сведению и мастерингу", "Запись хоров"]	

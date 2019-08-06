@@ -14,9 +14,9 @@ block content
 			.row
 				.small-10.small-centered.medium-6.column
 					article
-						h1 Заявка на&nbsp;запись
+						h1 Оставить заявку
 
-						form(action="https://formspree.io/495studio@mail.ru", method="POST").b-registration.js-validate-forms
+						form(action="https://formspree.io/zhoock@zhoock.ru", method="POST").b-registration.js-validate-forms
 							div
 								label(for="name_1") Имя
 								input#name_1(type="text", placeholder="Ваше имя", data-validate="Пожалуйста, введите ваше имя", name="Имя")
@@ -34,10 +34,10 @@ block content
 								input#phone(type="text", placeholder="Ваш номер телефона", data-inputmask="'mask': '8 (999) 999-99-99'", data-validate="Пожалуйста, введите номер вашего телефона", name="Номер телефона")
 
 							div.checkbox
-								input#option1(type="checkbox", name="Тип услуги", value="Запись вокала", checked)
-								label(for="option1") Запись вокала
-								input#option2(type="checkbox", name="Тип услуги", value="Аранжировка",)
-								label(for="option2") Аранжировка
+								input#option1(type="checkbox", name="Тип услуги", value="Запись", checked)
+								label(for="option1") Запись
+								//- input#option2(type="checkbox", name="Тип услуги", value="Аранжировка",)
+								//- label(for="option2") Аранжировка
 								input#option3(type="checkbox", name="Тип услуги", value="Сведение",)
 								label(for="option3") Сведение
 								input#option4(type="checkbox", name="Тип услуги", value="Мастеринг",)

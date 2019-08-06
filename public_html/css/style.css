@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* 495Studio website */
+/* Sergey Ryabov website */
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,600&subset=cyrillic,cyrillic-ext");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -2346,7 +2346,7 @@ header {
 header a.logo {
   color: #fff;
   border: none;
-  font-size: 1.44rem;
+  font-size: 2rem;
   line-height: 2.4rem;
   margin: 20px 0 0;
   display: inline-block;
@@ -2359,10 +2359,6 @@ header a.logo:active {
 }
 header a.logo span {
   font-weight: 600;
-}
-header a.logo small {
-  font-size: 1rem;
-  line-height: 2.4rem;
 }
 header nav {
   *zoom: 1;
